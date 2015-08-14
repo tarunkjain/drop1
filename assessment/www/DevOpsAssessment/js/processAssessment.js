@@ -108,27 +108,42 @@ $(document).ready(function () {
         generateOptions(relatedQuestion.Option, slideNum, relatedQuestion.level);
     }
 
-    function processRelatedQuestion(question, answerId, slideId) {
+//    function generateBackButton(previousQuestion, slideNum) {
+//        if (!$('.backQ').length) {
+//            $('#slide' + slideNum + ' .intro').append('<a href="#backQ" class="backQ">Back</a>');
+//        }
+//
+//        console.log(previousQuestion);
+//
+//        $('.backQ').attr('id', previousQuestion.opid);
+//        $('.backQ').data('level', previousQuestion.level);
+//        $('.backQ').data('slide', slideNum);
+//
+//        if (+previousQuestion.level === 1) {
+//            $('.backQ').data('catq', previousQuestion.Category + previousQuestion.level);
+//        }
+//    }
+
+    function processRelatedQuestion(question, answerId, slideNum) {
         $.each(question.Option, function (index, option) {
             if (+option.opid === +answerId) {
                 if (option.RelatedQuestion) {
-                    console.log(option);
+//                    if (localStorage.currentRelatedQuestions) {
+//                        generateBackButton(JSON.parse(localStorage.currentRelatedQuestions), slideNum);
+//                    }
+
                     localStorage.currentRelatedQuestions = JSON.stringify(option.RelatedQuestion);
-                    replaceQuestion(option.RelatedQuestion, slideId);
+                    replaceQuestion(option.RelatedQuestion, slideNum, option.opid);
                 }
             }
         });
     }
 
-    $(document).on('click', '.yes', function (e) {
-        e.preventDefault();
-
-        var catQ = $(this).data('catq'),
-            opId = $(this).attr('id'),
-            level = $(this).data('level'),
-            slideId = $(this).data('slide');
-
-        //var RelatedQuestion = getQuestionByOp(catQ, opId);
+    function processAnswer(elem) {
+        var catQ = $(elem).data('catq'),
+            opId = $(elem).attr('id'),
+            level = $(elem).data('level'),
+            slideNum = $(elem).data('slide');
 
         if (+level === 1) {
             $.getJSON('js/ProcessAssessmentQuestions.json', function (data) {
@@ -136,13 +151,23 @@ $(document).ready(function () {
                     // get the Process ID from a split and check if it is equal to the question ID in the iteration
                     if (+catQ.split('Process')[1] === +question.id) {
                         // Pass the relevant question object and the ID of the option
-                        processRelatedQuestion(question, opId, slideId);
+                        processRelatedQuestion(question, opId, slideNum);
                     }
                 });
             });
         } else {
-            processRelatedQuestion(JSON.parse(localStorage.currentRelatedQuestions), opId);
+            processRelatedQuestion(JSON.parse(localStorage.currentRelatedQuestions), opId, slideNum);
         }
+    }
+
+    $('.backQ').on('click', function(e) {
+        e.preventDefault();
+        processAnswer(this);
+    });
+
+    $(document).on('click', '.yes', function (e) {
+        e.preventDefault();
+        processAnswer(this);
     });
 
     function getQuestions(obj, list) {
