@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DevOps Process Assessment</title>
+    <meta name="description" content="fullPage fixed header and footer." />
+    <meta name="keywords" content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" type="text/css" href="./css/Styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="./css/layoutdesigns.css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/modernizr.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jspdf.js"></script>
+    <script type="text/javascript" src="libs/html2pdf.js"></script>
+    <script type="text/javascript" src="libs/require/config.js"></script>
+    <script type="text/javascript" src="plugins/addimage.js"></script>
+    <script type="text/javascript" src="plugins/cell.js"></script>
+    <script type="text/javascript" src="plugins/from_html.js"></script>
+    <script type="text/javascript" src="plugins/split_text_to_size.js"></script>
+    <script type="text/javascript" src="plugins/standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="libs/FileSaver.js/FileSaver.min.js"></script>
+    <script type="text/javascript" src="libs/html2canvas/dist/html2canvas.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/orientdb-api.js" type="text/javascript"></script>
+    <script src="js/orientdb.js" type="text/javascript"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="./js/processAssessment.js"></script>
+    <style>
+        #SavePDF td {
+            border: 1px solid #eee;
+        }
+
+        td {
+            width: 16%;
+            padding-left: .5em;
+            padding-right: .5em;
+        }
+
+        .table-heading {
+            background-color: #8D8C8C;
+        }
+
+        .table-body {
+            background-color: #ADACAC;
+            padding-bottom: 20px;
+        }
+
+        table.submitTable {
+            line-height: 50px;
+        }
+
+        table.submitTable tr {}
+
+        table.submitTable td {
+            width: 0%;
+            padding-left: 2em;
+            padding-right: .0em;
+        }
+        /*        td {
+            border: 0px solid #eee;
+        }*/
+        /* Style for our header texts
+    * --------------------------------------- */
+
+        h1 {
+            font-size: 5em;
+            font-family: arial, helvetica;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .intro p {
+            color: #fff;
+        }
+        /* Centered texts in each section
+    * --------------------------------------- */
+
+        .section {
+            text-align: center;
+        }
+        /* Fixed header and footer.
+    * --------------------------------------- */
+
+        #header,
+        #footer {
+            position: fixed;
+            height: 50px;
+            display: block;
+            width: 100%;
+            background: #333;
+            z-index: 9;
+            text-align: center;
+            color: #f2f2f2;
+            padding: 20px 0 0 0;
+        }
+
+        #header {
+            top: 0px;
+        }
+
+        #footer {
+            bottom: 0px;
+            border-top: 2px solid #F79646;
+        }
+        /* Bottom menu
+    * --------------------------------------- */
+
+        #infoMenu {
+            bottom: 80px;
+        }
+
+        #infoMenu li a {
+            color: #fff;
+            z-index: 999;
+        }
+
+        .modalDialog {
+            position: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 99999;
+            opacity: 0;
+            -webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 400ms ease-in;
+            transition: opacity 400ms ease-in;
+            pointer-events: none;
+        }
+
+        .modalDialog:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modalDialog > div {
+            width: 400px;
+            position: relative;
+            margin: 10% auto;
+            padding: 5px 20px 13px 20px;
+            border-radius: 10px;
+            background: #fff;
+            background: -moz-linear-gradient(#fff, #999);
+            background: -webkit-linear-gradient(#fff, #999);
+            background: -o-linear-gradient(#fff, #999);
+        }
+
+        .close {
+            background: #606061;
+            color: #FFFFFF;
+            line-height: 25px;
+            position: absolute;
+            right: -12px;
+            text-align: center;
+            top: -10px;
+            width: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+        }
+
+        .close:hover {
+            background: #00d9ff;
+        }
+
+        #submit_button {
+            border-radius: 7px;
+            padding: 5px 35px;
+            border: rgb(10, 7, 4);
+        }
+        /*        ratings*/
+        /*        ratings*/
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <section class="quiz-sub-nav background-site sub-nav-fixed" style="top:0px;">
+
+
+        <ul id="FunctionalMenu1" class="quiz-sub-nav-container">
+            <li onclick="location.href = '#secondPage';" class="quiz-intro-item" style="background-color: #4F81BD; cursor:pointer" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Process</a>
+                <div id="bar1" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage"><span class="link-spanner"></span></a></div>
+                <div id="bar2" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/1"><span class="link-spanner"></span></a></div>
+                <div id="bar3" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/2"><span class="link-spanner"></span></a></div>
+                <div id="bar4" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/3"><span class="link-spanner"></span></a></div>
+                <div id="bar5" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/4"><span class="link-spanner"></span></a></div>
+                <div id="bar6" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/5"><span class="link-spanner"></span></a></div>
+            </li>
+
+            <li onclick="location.href = '#secondPage/6';" class="quiz-intro-item " style="background-color: #4F81BD; cursor:pointer" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Development Excellence</a>
+                <div id="bar7" class="quiz-progress " style="width: 16.6666666667%;"><a href="#secondPage/6"><span class="link-spanner"></span></a></div>
+                <div id="bar8" class="quiz-progress " style="width: 16.6666666667%;"><a href="#secondPage/7"><span class="link-spanner"></span></a></div>
+                <div id="bar9" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/8"><span class="link-spanner"></span></a></div>
+                <div id="bar10" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/9"><span class="link-spanner"></span></a></div>
+                <div id="bar11" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/10"><span class="link-spanner"></span></a></div>
+                <div id="bar12" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/11"><span class="link-spanner"></span></a></div>
+            </li>
+
+            <li onclick="location.href = '#secondPage/12';" class="quiz-intro-item " class="quiz-intro-item " style="background-color: #4F81BD; cursor:pointer" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Service Standards</a>
+                <div id="bar13" class="quiz-progress " style="width: 16.6666666667%;"><a href="#secondPage/12"><span class="link-spanner"></span></a></div>
+                <div id="bar14" class="quiz-progress " style="width: 16.6666666667%;"><a href="#secondPage/13"><span class="link-spanner"></span></a></div>
+                <div id="bar15" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/14"><span class="link-spanner"></span></a></div>
+                <div id="bar16" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/15"><span class="link-spanner"></span></a></div>
+                <div id="bar17" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/16"><span class="link-spanner"></span></a></div>
+                <div id="bar18" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/17"><span class="link-spanner"></span></a></div>
+            </li>
+
+            <li onclick="location.href = '#secondPage/18';" class="quiz-intro-item " style="background-color: #4F81BD; cursor:pointer" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Quality Control</a>
+                <div id="bar19" class="quiz-progress " style="width: 16.6666666667%;"><a href="#secondPage/18"><span class="link-spanner"></span></a></div>
+                <div id="bar20" class="quiz-progress " style="width: 16.6666666667%;"><a href="#secondPage/19"><span class="link-spanner"></span></a></div>
+                <div id="bar21" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/20"><span class="link-spanner"></span></a></div>
+                <div id="bar22" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/21"><span class="link-spanner"></span></a></div>
+                <div id="bar23" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/22"><span class="link-spanner"></span></a></div>
+                <div id="bar24" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/23"><span class="link-spanner"></span></a></div>
+
+            </li>
+
+            <li id="results" onclick="location.href = '#secondPage/24';" class="quiz-intro-item " style="background-color: #4F81BD; cursor:pointer" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Deployments &amp; Environments</a>
+                <div id="bar25" class="quiz-progress " style="width: 16.6666666667%;"><a href="#secondPage/24"><span class="link-spanner"></span></a></div>
+                <div id="bar26" class="quiz-progress " style="width: 16.6666666667%;"><a href="#secondPage/25"><span class="link-spanner"></span></a></div>
+                <div id="bar27" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/26"><span class="link-spanner"></span></a></div>
+                <div id="bar28" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/27"><span class="link-spanner"></span></a></div>
+                <div id="bar29" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/28"><span class="link-spanner"></span></a></div>
+                <div id="bar30" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/29"><span class="link-spanner"></span></a></div>
+
+            </li>
+
+            <li id="results" onclick="location.href = '#secondPage/30';" class="quiz-intro-item " style="background-color: #4F81BD; cursor:pointer" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Assessment Results</a>
+                <div id="bar31" class="quiz-progress " style="width: 100%;">
+                    <a id="results1" href="#secondPage/30">
+                        <span class="link-spanner">
+
+                        </span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+    </section>
+    <div id="footer" style="background-color:#4F81BD;padding: 8px 0 0 0;">
+        <table>
+            <tr>
+                <td style="width:100%">
+                    Copyright © 2015 Virtusa Corporation. All Rights Reserved.
+                </td>
+                <td style="width:100px" align="right">
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="fullpage">
+
+        <div class="section" id="section1" style="display:none">
+            <div class="slide" id="slide1">
+                <div class="intro">
+                    <img src=".\Pictures\Build\picture1.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                            <!--<div id="q1" class="yes" style="font-size: 20px">Yes</div>
+
+
+                            <div id="q1" class="maybe" style="font-size: 20px">Partially</div>
+
+
+                            <div id="q1" class="no" style="font-size: 20px">No</div>-->
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide2">
+                <div class="intro">
+                    <img src=".\Pictures\Build\picture1.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+<!--                        <a href="#secondPage/2">
+                            <div id="q2" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/2">
+                            <div id="q2" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/2">
+                            <div id="q2" class="no" style="font-size: 20px">No</div>
+                        </a>-->
+                    </div>
+
+                    <div id="queans2" style="display:none">
+                        <h3 id="ans2"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide3">
+                <div class="intro">
+                    <img src=".\Pictures\Build\picture1.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                   <!--     <a href="#secondPage/3">
+                            <div id="q3" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/3">
+                            <div id="q3" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/3">
+                            <div id="q3" class="no" style="font-size: 20px">No</div>
+                        </a>-->
+                    </div>
+
+                    <div id="queans3" style="display:none">
+                        <h3 id="ans3"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide4">
+                <div class="intro">
+                    <img src=".\Pictures\Build\picture1.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+<!--                        <a href="#secondPage/4">
+                            <div id="q4" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/4">
+                            <div id="q4" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/4">
+                            <div id="q4" class="no" style="font-size: 20px">No</div>
+                        </a>-->
+                    </div>
+
+                    <div id="queans4" style="display:none">
+                        <h3 id="ans4"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide5">
+                <div class="intro">
+                    <img src=".\Pictures\Build\picture1.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                      <!--  <a href="#secondPage/5">
+                            <div id="q5" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/5">
+                            <div id="q5" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/5">
+                            <div id="q5" class="no" style="font-size: 20px">No</div>
+                        </a>-->
+                    </div>
+                    <div id="queans5" style="display:none">
+                        <h3 id="ans5"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide6">
+                <div class="intro">
+                    <img src=".\Pictures\Environment and Development\Computers_network_interface_symbol_256 (1).png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                       <!-- <a href="#secondPage/6">
+                            <div id="q6" class="yes " style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/6">
+                            <div id="q6" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/6">
+                            <div id="q6" class="no" style="font-size: 20px">No</div>
+                        </a>-->
+                    </div>
+
+                    <div id="queans6" style="display:none">
+                        <h3 id="ans6"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide7">
+                <div class="intro">
+                    <img src=".\Pictures\Environment and Development\Computers_network_interface_symbol_256 (1).png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <!--<a href="#secondPage/7">
+                            <div id="q7" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/7">
+                            <div id="q7" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/7">
+                            <div id="q7" class="no" style="font-size: 20px">No</div>
+                        </a>-->
+                    </div>
+
+                    <div id="queans7" style="display:none">
+                        <h3 id="ans7"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide8">
+                <div class="intro">
+                    <img src=".\Pictures\Environment and Development\Computers_network_interface_symbol_256 (1).png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+<!--
+                        <a href="#secondPage/8">
+                            <div id="q8" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/8">
+                            <div id="q8" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/8">
+                            <div id="q8" class="no" style="font-size: 20px">No</div>
+                        </a>
+-->
+                    </div>
+
+                    <div id="queans8" style="display:none">
+                        <h3 id="ans8"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide9">
+                <div class="intro">
+                    <img src=".\Pictures\Environment and Development\Computers_network_interface_symbol_256 (1).png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/9">
+                            <div id="q9" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/9">
+                            <div id="q9" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/9">
+                            <div id="q9" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans9" style="display:none">
+                        <h3 id="ans9"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide10">
+                <div class="intro">
+                    <img src=".\Pictures\Environment and Development\Computers_network_interface_symbol_256 (1).png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/10">
+                            <div id="q10" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/10">
+                            <div id="q10" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/10">
+                            <div id="q10" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans10" style="display:none">
+                        <h3 id="ans10"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide11">
+                <div class="intro">
+                    <img src=".\Pictures\Release & Compliance\Arrow_shuffle_256.png" height="140" width="125" style="padding-bottom: 5px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/11">
+                            <div id="q11" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/11">
+                            <div id="q11" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/11">
+                            <div id="q11" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans11" style="display:none">
+                        <h3 id="ans11"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide12">
+                <div class="intro">
+                    <img src=".\Pictures\Release & Compliance\Arrow_shuffle_256.png" height="140" width="125" style="padding-bottom: 5px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/12">
+                            <div id="q12" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/12">
+                            <div id="q12" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/12">
+                            <div id="q12" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans12" style="display:none">
+                        <h3 id="ans12"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide13">
+                <div class="intro">
+                    <img src=".\Pictures\Release & Compliance\Arrow_shuffle_256.png" height="140" width="125" style="padding-bottom: 5px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/13">
+                            <div id="q13" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/13">
+                            <div id="q13" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/13">
+                            <div id="q13" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans13" style="display:none">
+                        <h3 id="ans13"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide14">
+                <div class="intro">
+                    <img src=".\Pictures\Release & Compliance\Arrow_shuffle_256.png" height="140" width="125" style="padding-bottom: 5px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/14">
+                            <div id="q14" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/14">
+                            <div id="q14" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/14">
+                            <div id="q14" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans14" style="display:none">
+                        <h3 id="ans14"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide15">
+                <div class="intro">
+                    <img src=".\Pictures\Release & Compliance\Arrow_shuffle_256.png" height="140" width="125" style="padding-bottom: 5px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/15">
+                            <div id="q15" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/15">
+                            <div id="q15" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/15">
+                            <div id="q15" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans15" style="display:none">
+                        <h3 id="ans15"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide16">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/16">
+                            <div id="q16" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/16">
+                            <div id="q16" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/16">
+                            <div id="q16" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans16" style="display:none">
+                        <h3 id="ans16"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide17">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/17">
+                            <div id="q17" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/17">
+                            <div id="q17" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/17">
+                            <div id="q17" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans17" style="display:none">
+                        <h3 id="ans17"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide18">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/18">
+                            <div id="q18" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/18">
+                            <div id="q18" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/18">
+                            <div id="q18" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans18" style="display:none">
+                        <h3 id="ans18"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide19">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+                        <a href="#secondPage/19">
+                            <div id="q19" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/19">
+                            <div id="q19" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/19">
+                            <div id="q19" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans19" style="display:none">
+                        <h3 id="ans19"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide20">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/20">
+                            <div id="q20" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/20">
+                            <div id="q20" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/20">
+                            <div id="q20" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans20" style="display:none">
+                        <h3 id="ans20"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide21">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/21">
+                            <div id="q21" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/21">
+                            <div id="q21" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/21">
+                            <div id="q21" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans21" style="display:none">
+                        <h3 id="ans21"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide22">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/22">
+                            <div id="q22" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/22">
+                            <div id="q22" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/22">
+                            <div id="q22" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans22" style="display:none">
+                        <h3 id="ans22"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide23">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/23">
+                            <div id="q23" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/23">
+                            <div id="q23" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/23">
+                            <div id="q23" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans23" style="display:none">
+                        <h3 id="ans23"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide24">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/24">
+                            <div id="q24" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/24">
+                            <div id="q24" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/24">
+                            <div id="q24" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans24" style="display:none">
+                        <h3 id="ans24"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide25">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/25">
+                            <div id="q25" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/25">
+                            <div id="q25" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/25">
+                            <div id="q25" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans25" style="display:none">
+                        <h3 id="ans25"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide26">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/26">
+                            <div id="q26" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/26">
+                            <div id="q26" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/26">
+                            <div id="q26" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans26" style="display:none">
+                        <h3 id="ans26"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide27">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/27">
+                            <div id="q27" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/27">
+                            <div id="q27" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/27">
+                            <div id="q27" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans27" style="display:none">
+                        <h3 id="ans27"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide28">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/28">
+                            <div id="q28" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/28">
+                            <div id="q28" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/28">
+                            <div id="q28" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans28" style="display:none">
+                        <h3 id="ans28"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide29">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div class="container">
+
+                        <a href="#secondPage/29">
+                            <div id="q29" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/29">
+                            <div id="q29" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/29">
+                            <div id="q29" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans29" style="display:none">
+                        <h3 id="ans29"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide30">
+                <div class="intro">
+                    <img src=".\Pictures\Testing\Test_Tubes_256.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <button class="toggle"></button>
+                    <div id="container30" class="container">
+
+                        <a href="#secondPage/30">
+                            <div id="q30" class="yes" style="font-size: 20px">Yes</div>
+                        </a>
+                        <a href="#secondPage/30">
+                            <div id="q30" class="maybe" style="font-size: 20px">Partially</div>
+                        </a>
+                        <a href="#secondPage/30">
+                            <div id="q30" class="no" style="font-size: 20px">No</div>
+                        </a>
+                    </div>
+
+                    <div id="queans30" style="display:none">
+                        <h3 id="ans30"></h3>
+                    </div>
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide31">
+                <div id="SavePDF">
+                    <table width="100%" height="175" width="160" style="padding-bottom: 20px;">
+                        <tr>
+                            <td style="width: 2%">&nbsp;</td>
+                            <td height="15%">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td style="width: 2%">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 2%">&nbsp;</td>
+                            <td height="10%" style="height: 40px;" class="table-heading"><a class="quiz-intro-link " style="font-size:16px;color: white;font-family: Open Sans">Process</a></td>
+                            <td class="table-heading"><a class="quiz-intro-link " style="font-size:16px;color: white; font-family: Open Sans">Development Excellence</a></td>
+                            <td class="table-heading"><a class="quiz-intro-link " style="font-size:16px;color: white;font-family: Open Sans">Service Standards</a></td>
+                            <td class="table-heading"><a class="quiz-intro-link " style="font-size:16px;color: white; font-family: Open Sans">Quality Control</a></td>
+                            <td class="table-heading"><a class="quiz-intro-link " style="font-size:16px;color: white; font-family: Open Sans">Developments & Enevironments</a></td>
+
+                            <td style="width: 2%">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 2%">&nbsp;</td>
+                            <td class="table-body" valign="top" height="30%">
+                                <div class="demo-wrapper html5-progress-bar">
+                                    <div class="progress-bar-wrapper">
+                                        <progress id="progressbar0" value="0" max="100"></progress>
+
+                                    </div>
+                                </div>
+
+                                <span id="progressvalue0" class="progress-value" style="font-size:22px; font-weight: bold; border:0px; margin:0px">0%</span>
+                                <br/>
+                                <br/>
+                                <span id="text00" style="font: 200 17px / 24px source-sans-pro,Sans-serif;">Pending Results</span>
+                                <br/>
+                                <br/>
+                                <span id="text01" style="font: 200 16px / 24px source-sans-pro,Sans-serif;">Please answer all the questions and come back
+        </span>
+                            </td>
+                            <td class="table-body" valign="top">
+                                <div class="demo-wrapper html5-progress-bar">
+                                    <div class="progress-bar-wrapper">
+                                        <progress id="progressbar1" value="0" max="100"></progress>
+                                    </div>
+                                </div>
+
+                                <span id="progressvalue1" class="progress-value" style="font-size:22px; font-weight: bold;border:0px; margin:0px">0%</span>
+                                <br/>
+                                <br/>
+                                <span id="text10" style="font: 200 17px / 24px source-sans-pro,Sans-serif;">Pending Results
+        </span>
+                                <br/>
+                                <br/>
+                                <span id="text11" style="font: 200 16px / 24px source-sans-pro,Sans-serif;">Please answer all the questions and come back
+
+        </span>
+                            </td>
+                            <td class="table-body" valign="top">
+                                <div class="demo-wrapper html5-progress-bar">
+                                    <div class="progress-bar-wrapper">
+                                        <progress id="progressbar2" value="0" max="100"></progress>
+
+                                    </div>
+                                </div>
+                                <span id="progressvalue2" class="progress-value" style="font-size:22px; font-weight: bold; border:0px; margin:0px">0%</span>
+                                <br/>
+                                <br/>
+                                <span id="text20" style="font: 200 17px / 24px source-sans-pro,Sans-serif;">Pending Results
+        </span>
+                                <br/>
+                                <br/>
+                                <span id="text21" style="font: 200 16px / 24px source-sans-pro,Sans-serif;">Please answer all the questions and come back
+        </span>
+
+                            </td>
+                            <td class="table-body" valign="top">
+                                <div class="demo-wrapper html5-progress-bar">
+                                    <div class="progress-bar-wrapper">
+                                        <progress id="progressbar3" value="0" max="100"></progress>
+
+                                    </div>
+                                </div>
+                                <span id="progressvalue3" class="progress-value" style="font-size:22px; font-weight: bold; border:0px; margin:0px">0%</span>
+                                <br/>
+                                <br/>
+                                <span id="text30" style="font: 200 17px / 24px source-sans-pro,Sans-serif;">Pending Results
+        </span>
+                                <br/>
+                                <br/>
+                                <span id="text31" style="font: 200 16px / 24px source-sans-pro,Sans-serif;">Please answer all the questions and come back
+        </span>
+                            </td>
+                            <td class="table-body" valign="top">
+                                <div class="demo-wrapper html5-progress-bar">
+                                    <div class="progress-bar-wrapper">
+                                        <progress id="progressbar4" value="0" max="100"></progress>
+
+                                    </div>
+                                </div>
+                                <span id="progressvalue4" class="progress-value" style="font-size:22px; font-weight: bold; border:0px; margin:0px">0%</span>
+                                <br/>
+                                <br/>
+                                <span id="text40" style="font: 200 17px / 24px source-sans-pro,Sans-serif;">Pending Results
+        </span>
+                                <br/>
+                                <br/>
+                                <span id="text41" style="font: 200 16px / 24px source-sans-pro,Sans-serif;">Please answer all the questions and come back
+        </span>
+                            </td>
+
+                            <td style="width: 2%">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 2%">&nbsp;</td>
+                            <td style="padding-top: 18px;" colspan=5 align="center">
+<!--                                <div id="printID" class="btn" style="width:250px;">Save</div>-->
+                                <input type="submit" id='printID' class='btn' value="Save" style="width:10%">
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="width: 2%">&nbsp;</td>
+                            <td height="20%">&nbsp;</td>
+                            <td></td>
+                            <td>
+                                <div id="SetText" style="font-size: large; font-family: monospace; color: black;"></div>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td style="width: 2%">&nbsp;</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="slide" id="TablePDF">
+                <table>
+                    <tr>
+                        <td style="width:25%">Assesment Category</td>
+                        <td>Result</td>
+                        <td>Maturity Level</td>
+                        <td>Description</td>
+                        <!--                                <td style="width:10%">Peer %</td>-->
+
+                    </tr>
+                    <tr>
+                        <td>Process</td>
+                        <td id="perc01"></td>
+                        <td id="rec01"></td>
+                        <td id="desc01"></td>
+                        <!--                                                            <td id="Other01"></td>-->
+                    </tr>
+                    <tr>
+                        <td>Development Excellence</td>
+                        <td id="perc02"></td>
+                        <td id="rec02"></td>
+                        <td id="desc02"></td>
+                        <!--                                                            <td id="Other02"></td>-->
+                    </tr>
+                    <tr>
+                        <td>Service Standards</td>
+                        <td id="perc03"></td>
+                        <td id="rec03"></td>
+                        <td id="desc03"></td>
+                        <!--                            <td id="Other03"></td>-->
+                    </tr>
+                    <tr>
+                        <td>Quality Control</td>
+                        <td id="perc04"></td>
+                        <td id="rec04"></td>
+                        <td id="desc04"></td>
+                        <!--                                                            <td id="Other04"></td>-->
+
+                    </tr>
+                    <tr>
+                        <td>Deployments & Enevironments</td>
+                        <td id="perc05"></td>
+                        <td id="rec05"></td>
+                        <td id="desc05"></td>
+                        <!--                                                            <td id="Other05"></td>-->
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="modalContainer" class="modalContainer"></div>
+
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //my code to redirect
+                    var newURL = window.location.protocol + "//" + window.location.host;
+                    window.location.assign(newURL + "/DevOpsAssessment/ProcessAssessment.html#secondPage");
+
+                //end of my code
+
+                $('#fullpage').fullpage({
+                    anchors: ['secondPage'],
+                    sectionsColor: ['rgb(240, 242, 244)'],
+                    css3: true
+                });
+
+            });
+
+            $(':radio').change(function() {
+                $('.choice').text(this.value + ' stars');
+            })
+
+        </script>
+
+</body>
+
+</html>

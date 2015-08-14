@@ -1,0 +1,24 @@
+
+2015-07-06 10:33:20:627 INFO  OrientDB auto-config DISKCACHE=1,487MB (heap=455MB os=3,991MB disk=20,854MB) [orientechnologies]
+2015-07-06 10:33:20:627 INFO  Loading configuration from: C:/Softwares/orientdb-community-2.0.11/config/orientdb-server-config.xml... [OServerConfigurationLoaderXml]
+2015-07-06 10:33:20:941 INFO  OrientDB Server v2.0.11 (build UNKNOWN@r${buildNumber}; 2015-06-19 15:38:17+0000) is starting up... [OServer]
+2015-07-06 10:33:20:989 INFO  Databases directory: C:\Softwares\orientdb-community-2.0.11\databases [OServer]
+2015-07-06 10:33:21:036 INFO  Listening binary connections on 0.0.0.0:2424 (protocol v.28, socket=default) [OServerNetworkListener]
+2015-07-06 10:33:21:036 INFO  Listening http connections on 0.0.0.0:2480 (protocol v.10, socket=default) [OServerNetworkListener]
+2015-07-06 10:33:21:082 INFO  Installing dynamic plugin 'studio-2.0.zip'... [OServerPluginManager]
+2015-07-06 10:33:21:176 INFO  Installing GREMLIN language v.2.6.0 - graph.pool.max=50 [OGraphServerHandler]
+2015-07-06 10:33:21:176 INFO  [OVariableParser.resolveVariables] Error on resolving property: distributed [orientechnologies]
+2015-07-06 10:33:21:176 INFO  Installing Script interpreter. WARN: authenticated clients can execute any kind of code into the server by using the following allowed languages: [sql] [OServerSideScriptInterpreter]
+2015-07-06 10:33:21:192 INFO  OrientDB Server v2.0.11 is active. [OServer]Error on loading resource /studio/img/sunrise-beach.jpg
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(Unknown Source)
+	at java.net.SocketOutputStream.write(Unknown Source)
+	at java.io.BufferedOutputStream.flushBuffer(Unknown Source)
+	at java.io.BufferedOutputStream.write(Unknown Source)
+	at com.orientechnologies.orient.server.network.protocol.http.OHttpResponse.sendStream(OHttpResponse.java:457)
+	at com.orientechnologies.orient.server.network.protocol.http.OHttpResponse.sendStream(OHttpResponse.java:422)
+	at com.orientechnologies.orient.server.network.protocol.http.command.get.OServerCommandGetStaticContent.execute(OServerCommandGetStaticContent.java:134)
+	at com.orientechnologies.orient.server.network.protocol.http.ONetworkProtocolHttpAbstract.service(ONetworkProtocolHttpAbstract.java:174)
+	at com.orientechnologies.orient.server.network.protocol.http.ONetworkProtocolHttpAbstract.execute(ONetworkProtocolHttpAbstract.java:574)
+	at com.orientechnologies.common.thread.OSoftThread.run(OSoftThread.java:69)

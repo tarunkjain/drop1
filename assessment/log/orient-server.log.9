@@ -1,0 +1,35 @@
+
+2015-07-22 18:18:23:691 INFO  OrientDB auto-config DISKCACHE=1,426MB (heap=455MB os=3,929MB disk=12,336MB) [orientechnologies]
+2015-07-22 18:18:23:697 INFO  Loading configuration from: C:/Project/trunk/Releases/SourceCode/Source/DevOps Assesment/config/orientdb-server-config.xml... [OServerConfigurationLoaderXml]
+2015-07-22 18:18:24:038 INFO  OrientDB Server v2.0.11 (build UNKNOWN@r${buildNumber}; 2015-06-19 15:38:17+0000) is starting up... [OServer]
+2015-07-22 18:18:24:070 INFO  Databases directory: C:\Project\trunk\Releases\SourceCode\Source\DevOps Assesment\databases [OServer]
+2015-07-22 18:18:24:110 INFO  Listening binary connections on 0.0.0.0:2424 (protocol v.28, socket=default) [OServerNetworkListener]
+2015-07-22 18:18:24:112 INFO  Listening http connections on 0.0.0.0:2480 (protocol v.10, socket=default) [OServerNetworkListener]
+2015-07-22 18:18:24:130 INFO  Installing dynamic plugin 'studio-2.0.zip'... [OServerPluginManager]
+2015-07-22 18:18:24:349 INFO  Installing GREMLIN language v.2.6.0 - graph.pool.max=50 [OGraphServerHandler]
+2015-07-22 18:18:24:360 INFO  [OVariableParser.resolveVariables] Error on resolving property: distributed [orientechnologies]
+2015-07-22 18:18:24:365 INFO  Installing Script interpreter. WARN: authenticated clients can execute any kind of code into the server by using the following allowed languages: [sql] [OServerSideScriptInterpreter]
+2015-07-22 18:18:24:366 INFO  OrientDB Server v2.0.11 is active. [OServer]
+2015-07-22 18:19:26:082 WARNING {db=DevOpsAssessment} segment file 'database.ocf' was not closed correctly last time [OSingleFileSegment]
+2015-07-22 18:19:26:293 WARNING {db=DevOpsAssessment} Storage DevOpsAssessment was not closed properly. Will try to restore from write ahead log. [OLocalPaginatedStorage]
+2015-07-22 18:19:26:294 INFO  {db=DevOpsAssessment} Looking for last checkpoint... [OLocalPaginatedStorage]
+2015-07-22 18:19:26:329 INFO  {db=DevOpsAssessment} Found FUZZY checkpoint. [OLocalPaginatedStorage]
+2015-07-22 18:19:26:331 INFO  {db=DevOpsAssessment} Data restore procedure from FUZZY checkpoint is started. [OLocalPaginatedStorage]
+2015-07-22 18:19:26:334 WARNING {db=DevOpsAssessment} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=12011234}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-22 18:19:26:336 WARNING {db=DevOpsAssessment} Record OFuzzyCheckpointStartRecord{lsn=OLogSequenceNumber{segment=0, position=12011245}} com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointStartRecord{lsn=null, previousCheckpoint=OLogSequenceNumber{segment=0, position=12011190}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-22 18:19:26:342 WARNING {db=DevOpsAssessment} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=12011289}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-22 18:19:26:343 INFO  {db=DevOpsAssessment} Storage data restore was completed [OLocalPaginatedStorage]
+2015-07-22 18:22:57:160 WARNING ->0:0:0:0:0:0:0:1: Command not found: GET.DevOpsAssessment/Too [ONetworkProtocolHttpDb]Error on loading resource /DevOpsAssessment/ToolsResults.html
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:109)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:153)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+	at com.orientechnologies.orient.server.network.protocol.http.OHttpResponse.flush(OHttpResponse.java:528)
+	at com.orientechnologies.orient.server.network.protocol.http.OHttpResponse.sendStream(OHttpResponse.java:461)
+	at com.orientechnologies.orient.server.network.protocol.http.OHttpResponse.sendStream(OHttpResponse.java:422)
+	at com.orientechnologies.orient.server.network.protocol.http.command.get.OServerCommandGetStaticContent.execute(OServerCommandGetStaticContent.java:134)
+	at com.orientechnologies.orient.server.network.protocol.http.ONetworkProtocolHttpAbstract.service(ONetworkProtocolHttpAbstract.java:174)
+	at com.orientechnologies.orient.server.network.protocol.http.ONetworkProtocolHttpAbstract.execute(ONetworkProtocolHttpAbstract.java:574)
+	at com.orientechnologies.common.thread.OSoftThread.run(OSoftThread.java:69)

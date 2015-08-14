@@ -1,0 +1,29 @@
+{
+    "services": [
+        {
+            "name": "BARCLAYS.NET",
+            "apps": [
+                "BARCLAYS.NET",
+                "BARCLAYS.NET CUSTOMER MIGRATION"
+            ]
+        },
+
+        {
+            "name": "CORPORATE SHARED ETL",
+            "apps": [
+                "CORP INFORMITICA ETL",
+                "CORPORATE SHARED ETL",
+                "UNIXMI"
+            ]
+        },
+
+        {
+            "name": "BARCLAYS ENTERPRISE MIDDLEWARE (BEM)",
+            "apps": [
+                "BARCLAYS ENTERPRISE MIDDLEWARE (BEM)"
+            ]
+        }
+
+    ]
+}
+	

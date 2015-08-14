@@ -1,0 +1,630 @@
+{
+  "AssessmentQuestions": [
+    {
+      "Category": "Process",
+      "level": "1",
+      "id": "1",
+      "Question": "Is all change tracked end-to-end through with the approved tool chain? (i.e. change raised to fully rolled out in production)",
+      "Description": "Change introduced during development process is tracked and monitored throughout the set of devops tools implemented in the project.",
+      "Option": [
+        {
+          "opid": "1",
+          "Answer": "Yes",
+          "RelatedQuestion": {
+            "level": "2",
+            "Question": "Related Question for Yes",
+            "Description": "Related Desc for yes",
+            "Option": [
+              {
+                "Answer": "Sub Yes",
+                  "opid": 1,
+                "RelatedQuestion": {
+                  "level": "3",
+                    "Question": "SubRelated Qustion for Yes",
+                    "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "opid": 1,
+                      "Answer": "Yes"
+                    },
+                    {
+                      "opid": 2,
+                      "Answer": "May be"
+                    },
+                    {
+                      "opid": 3,
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "Sub May be"
+              },
+              {
+                "Answer": "Sub No"
+              }
+            ]
+          }
+        },
+        {
+          "opid": "2",
+          "Answer": "May be",
+          "RelatedQuestion": {
+            "Question": "Related Question for Maybe",
+            "Description": "Related Desc for Maybe",
+            "Option": [
+              {
+                "Answer": "Yes",
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for Yes",
+                  "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "Answer": "Yes"
+                    },
+                    {
+                      "Answer": "May be"
+                    },
+                    {
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be"
+              },
+              {
+                "Answer": "No"
+              }
+            ]
+          }
+        },
+        {
+          "opid": "3",
+          "Answer": "No",
+          "RelatedQuestion": {
+            "Question": "Related Question for No",
+            "Description": "Related Desc for No",
+            "Option": [
+              {
+                "Answer": "Yes",
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for Yes",
+                  "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "Answer": "Yes"
+                    },
+                    {
+                      "Answer": "May be"
+                    },
+                    {
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be"
+              },
+              {
+                "Answer": "No"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Category": "Process",
+      "id": "2",
+      "level": 1,
+      "Question": "Is 80% of all resource time tracked in Jira against PWR?",
+      "Description": "All the resource time is captured and monitored in a Power Report.",
+      "Option": [
+        {
+          "opid": "1",
+          "Answer": "Yes2",
+          "RelatedQuestion": {
+            "level": 2,
+            "Question": "Related Question for Yes2",
+            "Description": "Related Desc for yes2",
+            "Option": [
+              {
+                "Answer": "SubYes2",
+                  "opid": 1,
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for Yes",
+                  "level": 3,
+                  "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "Answer": "Yes",
+                        "opid": 1
+                    },
+                    {
+                      "Answer": "May be",
+                        "opid": 2
+                    },
+                    {
+                      "opid": 3,
+                      "Answer": "No",
+                      "RelatedQuestion": {
+                        "Question": "Lorem ipsum blah blah",
+                        "level": 4,
+                        "Description": "A different description",
+                        "Option": [
+                          {
+                            "Answer": "SubYes2",
+                              "opid": 1,
+                            "RelatedQuestion": {
+                              "Question": "SubRelated Qustion for Yes",
+                              "level": 5,
+                              "Description": "SubRelated Desc for yes",
+                              "Option": [
+                                {
+                                  "Answer": "Yes",
+                                    "opid": 1
+                                },
+                                {
+                                  "Answer": "May be",
+                                    "opid": 2
+                                },
+                                {
+                                  "Answer": "No",
+                                    "opid": 3
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be",
+                  "opid": 2
+              },
+              {
+                "Answer": "No",
+                  "opid": 3
+              }
+            ]
+          }
+        },
+        {
+          "opid": "2",
+          "Answer": "No2",
+          "RelatedQuestion": {
+            "Question": "Related Question for No2",
+            "level": 2,
+            "Description": "Related Desc for No2",
+            "Option": [
+              {
+                "Answer": "SubNo2",
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for No",
+                  "level": 3,
+                  "Description": "SubRelated Desc for No",
+                  "Option": [
+                    {
+                      "Answer": "Yes"
+                    },
+                    {
+                      "Answer": "May be"
+                    },
+                    {
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be"
+              },
+              {
+                "Answer": "No"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Category": "Process",
+      "id": "3",
+      "Question": "Does traceable retrospectives have measurable improvement on the end-to-end delivery of change?",
+      "Description": "All the actions are clearly traceable after deployment of the project using the simple dashboard.",
+      "Option": [
+        {
+          "Answer": "Yes2",
+          "RelatedQuestion": {
+            "Question": "Related Question for Yes2",
+            "Description": "Related Desc for yes2",
+            "Option": [
+              {
+                "Answer": "SubYes2",
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for Yes",
+                  "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "Answer": "Yes"
+                    },
+                    {
+                      "Answer": "May be"
+                    },
+                    {
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be"
+              },
+              {
+                "Answer": "No"
+              }
+            ]
+          }
+        },
+        {
+          "Answer": "May be2"
+        },
+        {
+          "Answer": "No2"
+        }
+      ]
+    },
+    {
+      "Category": "Process",
+      "id": "4",
+      "Question": "Is all produced documentation tagged and tracked in Confluence?",
+      "Description": "All the tasks are produced in a well-documented manner which enables to be tracked and monitored very easily.",
+      "Option": [
+        {
+          "Answer": "Yes2",
+          "RelatedQuestion": {
+            "Question": "Related Question for Yes2",
+            "Description": "Related Desc for yes2",
+            "Option": [
+              {
+                "Answer": "SubYes2",
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for Yes",
+                  "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "Answer": "Yes"
+                    },
+                    {
+                      "Answer": "May be"
+                    },
+                    {
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be"
+              },
+              {
+                "Answer": "No"
+              }
+            ]
+          }
+        },
+        {
+          "Answer": "May be2"
+        },
+        {
+          "Answer": "No2"
+        }
+      ]
+    },
+    {
+      "Category": "Process",
+      "id": "5",
+      "Question": "Are environment change requests tracked and managed through Jira in accordance with the centrally defined Jira workflow for change?",
+      "Description": "All the change requests are tracked and managed using a JIRA workflow which is used specifically to handle them.",
+      "Option": [
+        {
+          "Answer": "Yes2",
+          "RelatedQuestion": {
+            "Question": "Related Question for Yes2",
+            "Description": "Related Desc for yes2",
+            "Option": [
+              {
+                "Answer": "SubYes2",
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for Yes",
+                  "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "Answer": "Yes"
+                    },
+                    {
+                      "Answer": "May be"
+                    },
+                    {
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be"
+              },
+              {
+                "Answer": "No"
+              }
+            ]
+          }
+        },
+        {
+          "Answer": "May be2"
+        },
+        {
+          "Answer": "No2"
+        }
+      ]
+    },
+    {
+      "Category": "Process",
+      "id": "6",
+      "Question": "Will every PWR have a corresponding code branch in the strategic SCM aligned to the technology subject to the change?",
+      "Description": "Every Power Report has a version control branch associated with it so that there is alignment between the technology that is undergoing a change request.",
+      "Option": [
+        {
+          "Answer": "Yes2",
+          "RelatedQuestion": {
+            "Question": "Related Question for Yes2",
+            "Description": "Related Desc for yes2",
+            "Option": [
+              {
+                "Answer": "SubYes2",
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for Yes",
+                  "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "Answer": "Yes"
+                    },
+                    {
+                      "Answer": "May be"
+                    },
+                    {
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be"
+              },
+              {
+                "Answer": "No"
+              }
+            ]
+          }
+        },
+        {
+          "Answer": "May be2"
+        },
+        {
+          "Answer": "No2"
+        }
+      ]
+    },
+    {
+      "Category": "Development Excellence",
+      "id": "1",
+      "Question": "Are code streams are connected to CI for compilation, unit testing, quality compliance, packaging, deployment and automated assembly testing?",
+      "Description": "All the code streams and repositories are tightly coupled and has access to continuation integration in order to do the compilation, unit testing, quality compliance, packaging, deployment and automated assembly testing.",
+      "Option": [
+        {
+          "Answer": "Yes2",
+          "RelatedQuestion": {
+            "Question": "Related Question for Yes2",
+            "Description": "Related Desc for yes2",
+            "Option": [
+              {
+                "Answer": "SubYes2",
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for Yes",
+                  "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "Answer": "Yes"
+                    },
+                    {
+                      "Answer": "May be"
+                    },
+                    {
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be"
+              },
+              {
+                "Answer": "No"
+              }
+            ]
+          }
+        },
+        {
+          "Answer": "May be2"
+        },
+        {
+          "Answer": "No2"
+        }
+      ]
+    },
+    {
+      "Category": "Development Excellence",
+      "id": "2",
+      "Question": "Are artifacts published to a central repository? (e.g. Nexus)",
+      "Description": "All the artifacts are uploaded in a central repository which is easily accessible and also for other contributors to easily update and sync the changes in seconds time.",
+      "Option": [
+        {
+          "Answer": "Yes2",
+          "RelatedQuestion": {
+            "Question": "Related Question for Yes2",
+            "Description": "Related Desc for yes2",
+            "Option": [
+              {
+                "Answer": "SubYes2",
+                "RelatedQuestion": {
+                  "Question": "SubRelated Qustion for Yes",
+                  "Description": "SubRelated Desc for yes",
+                  "Option": [
+                    {
+                      "Answer": "Yes"
+                    },
+                    {
+                      "Answer": "May be"
+                    },
+                    {
+                      "Answer": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "Answer": "May be"
+              },
+              {
+                "Answer": "No"
+              }
+            ]
+          }
+        },
+        {
+          "Answer": "May be2"
+        },
+        {
+          "Answer": "No2"
+        }
+      ]
+    },
+    {
+      "Category": "Development Excellence",
+      "Question": "Do all code streams with external compile/run time dependencies pull them from a central repository? (eg. maven script pulls from Nexus)",
+      "Description": "All the code streams which requires external compile or runtime dependencies are able to retrieve from a central repository."
+    },
+    {
+      "Category": "Development Excellence",
+      "Question": "Is the development environment (IDE, source code and server config) setup automated?",
+      "Description": "Environment provisioning  is an ideal state as it allows users to focus on applying identical environment configurations by a single click."
+    },
+    {
+      "Category": "Development Excellence",
+      "Question": "Do development teams follow TDD/BDD demonstrating high levels of code coverage from unit and assembly testing?",
+      "Description": "Development teams follow Test-Driven Development and Behaviour-Driven Development demonstrating which covers high levels of code coverage from unit testing to assembly testing."
+    },
+    {
+      "Category": "Development Excellence",
+      "Question": "Are code branches and code commits tagged and baselined such that all change requests are directly traceable?",
+      "Description": "All change requests are easily traceable via a simple dashboard which gives the user a very transparent insight in to the release pipeline which enables to point out build fails or errors easily and to have more control over the applications and the deployments."
+    },
+    {
+      "Category": "Service Standards",
+      "Question": "Are all code releases subject to a staged roll out and piloting phase?",
+      "Description": "Releases done by your team are deployed in stages including a pilot phase where it is not in production."
+    },
+    {
+      "Category": "Service Standards",
+      "Question": "Are there at least 5 problem records resulting from new production releases?",
+      "Description": "A production release of the code creates at least 5 problem records which need to be handled by the team."
+    },
+    {
+      "Category": "Service Standards",
+      "Question": "Is mean time to resolution less than or equal to SLA attached to the associated severity?",
+      "Description": "Average time for problem resolution is less than or equal to that specified for a problem of that severity in the Service Level Agreement."
+    },
+    {
+      "Category": "Service Standards",
+      "Question": "Are code deployments non-impacting and can take place during business hours?",
+      "Description": "deployment of code including bugfixes does not impact application availability, and can be carried out during business hours."
+    },
+    {
+      "Category": "Service Standards",
+      "Question": "Are applications deployed Active-Active across DR and Production?",
+      "Description": "Applications are deployed under Single Machine High Availability across Disaster Recovery and Production servers."
+    },
+    {
+      "Category": "Service Standards",
+      "Question": "Are alerting controls in place for all assets in the application and its boundary points?",
+      "Description": "Alerting is enabled for asset availability within the application as well as for all application boundaries."
+    },
+    {
+      "Category": "Quality Control",
+      "Question": "Is 80% at maximum automated UT, AT and Performance Test coverage?",
+      "Description": "80% of tests including User Tests, Acceptance Tests and Performance Tests are automated at deployment."
+    },
+    {
+      "Category": "Quality Control",
+      "Question": "Are AT, SIT, Performance Test automation reports published and searchable for each change (coverage, pass/fail)?",
+      "Description": "Test automation reports are published and can be searched and accessed quickly based on filters such as coverage and pass/fail rates."
+    },
+    {
+      "Category": "Quality Control",
+      "Question": "Are automated failover testing in OAT to prove resiliency design for the application?",
+      "Description": "The automated tests revert to Orthogonal Array Testing to maintain resilience of the application."
+    },
+    {
+      "Category": "Quality Control",
+      "Question": "Is performance test is automated and occurs for every code change?",
+      "Description": "Production deploys can still be manually initiated in cases where a signoff is required, yet the testing, deployment process and validation should be entirely automated to ensure consistency, accuracy and optimal speed. Automating deploys means no copy and paste, less security risk, more auditability, more confidence."
+    },
+    {
+      "Category": "Quality Control",
+      "Question": "Does the product has performance monitoring attached to each automated test run with delta comparisons and automatic test failure based on thresholds?",
+      "Description": "Performance of the applications will be monitored via a a platform which will constantly monitor and provide server and application health reports."
+    },
+    {
+      "Category": "Quality Control",
+      "Question": "Is penetration test is automated and occurs for every change prior to production (HP Fortify)?",
+      "Description": "Security testing is automated and runs through a well-known tool like HP Fortify during the development cycle itself."
+    },
+    {
+      "Category": "Deployments & Environments",
+      "Question": "Are all environments are aligned to strategic offerings: PaaS IaaS SaaS?",
+      "Description": "All environments related to the system are aligned strategically to these major market offerings: Platform-as-a-Service, Infrastructure-as-a-Service and Software-as-a-Service."
+    },
+    {
+      "Category": "Deployments & Environments",
+      "Question": "Is the new environment build/change is tracked in Jira/Team City/Team Concert and aligned to PWR?",
+      "Description": "New environment changes are easily managed using the environment provisioning application."
+    },
+    {
+      "Category": "Deployments & Environments",
+      "Question": "Is the deployment to AT, SIT, OAT, VPT, UAT fully automated?",
+      "Description": "Deployments to all test environments (Acceptance Testing, System Integration Testing, Operational Acceptance Testing and User Acceptance Testing) is fully automated and monitored."
+    },
+    {
+      "Category": "Deployments & Environments",
+      "Question": "Is the deployments to AT, SIT, OAT, VPT, UAT are tracked in Jira/Team City/Team Concert?",
+      "Description": "Deployments to all test environments are tracked through team management tools."
+    },
+    {
+      "Category": "Deployments & Environments",
+      "Question": "Is the deployment to Production and DR fully automated, fully integrated with ServiceNow?",
+      "Description": "The deployment flow to Production and Disaster Recovery environments are fully automated and the automated is integrated with ticketing system."
+    },
+    {
+      "Category": "Deployments & Environments",
+      "Question": "Is the full audit trail for automated deployments across all tools in the chain? (e.g. Jira-> Jenkins -> Nolio-> JBoss)",
+      "Description": "Automated deployments are fully audited and the process documented through the toolset used through the deployment chain."
+    }
+  ]
+}

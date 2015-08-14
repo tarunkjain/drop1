@@ -1,0 +1,76 @@
+
+2015-07-06 10:34:55:338 INFO  OrientDB auto-config DISKCACHE=1,487MB (heap=455MB os=3,991MB disk=20,859MB) [orientechnologies]
+2015-07-06 10:34:55:338 INFO  Loading configuration from: C:/Softwares/orientdb-community-2.0.11/config/orientdb-server-config.xml... [OServerConfigurationLoaderXml]
+2015-07-06 10:34:55:598 INFO  OrientDB Server v2.0.11 (build UNKNOWN@r${buildNumber}; 2015-06-19 15:38:17+0000) is starting up... [OServer]
+2015-07-06 10:34:55:629 INFO  Databases directory: C:\Softwares\orientdb-community-2.0.11\databases [OServer]
+2015-07-06 10:34:55:667 INFO  Listening binary connections on 0.0.0.0:2424 (protocol v.28, socket=default) [OServerNetworkListener]
+2015-07-06 10:34:55:669 INFO  Listening http connections on 0.0.0.0:2480 (protocol v.10, socket=default) [OServerNetworkListener]
+2015-07-06 10:34:55:690 INFO  Installing dynamic plugin 'studio-2.0.zip'... [OServerPluginManager]
+2015-07-06 10:34:55:768 INFO  Installing GREMLIN language v.2.6.0 - graph.pool.max=50 [OGraphServerHandler]
+2015-07-06 10:34:55:770 INFO  [OVariableParser.resolveVariables] Error on resolving property: distributed [orientechnologies]
+2015-07-06 10:34:55:776 INFO  Installing Script interpreter. WARN: authenticated clients can execute any kind of code into the server by using the following allowed languages: [sql] [OServerSideScriptInterpreter]
+2015-07-06 10:34:55:777 INFO  OrientDB Server v2.0.11 is active. [OServer]
+2015-07-06 10:38:43:702 WARNING {db=devopstest} segment file 'database.ocf' was not closed correctly last time [OSingleFileSegment]
+2015-07-06 10:38:43:889 WARNING {db=devopstest} Storage devopstest was not closed properly. Will try to restore from write ahead log. [OLocalPaginatedStorage]
+2015-07-06 10:38:43:889 INFO  {db=devopstest} Looking for last checkpoint... [OLocalPaginatedStorage]
+2015-07-06 10:38:43:920 INFO  {db=devopstest} Found FUZZY checkpoint. [OLocalPaginatedStorage]
+2015-07-06 10:38:43:920 INFO  {db=devopstest} Data restore procedure from FUZZY checkpoint is started. [OLocalPaginatedStorage]
+2015-07-06 10:38:43:920 WARNING {db=devopstest} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=2448253}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-06 10:38:43:920 WARNING {db=devopstest} Record OFuzzyCheckpointStartRecord{lsn=OLogSequenceNumber{segment=0, position=2448264}} com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointStartRecord{lsn=null, previousCheckpoint=OLogSequenceNumber{segment=0, position=2448209}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-06 10:38:43:920 WARNING {db=devopstest} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=2448308}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-06 10:38:43:936 INFO  {db=devopstest} Storage data restore was completed [OLocalPaginatedStorage]
+2015-07-06 12:27:48:208 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OQueryParsingException: Error on parsing query
+Query:  AssessmentsResult
+------^
+--> com.orientechnologies.orient.core.exception.OCommandExecutionException: Class 'ASSESSMENTSRESULT' was not found in current database [ONetworkProtocolHttpDb]
+2015-07-06 12:28:02:618 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OQueryParsingException: Error on parsing query
+Query:  AssessmentsResult
+------^
+--> com.orientechnologies.orient.core.exception.OCommandExecutionException: Class 'ASSESSMENTSRESULT' was not found in current database [ONetworkProtocolHttpDb]
+2015-07-06 12:28:07:255 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OQueryParsingException: Error on parsing query
+Query:  AssessmentsResult
+------^
+--> com.orientechnologies.orient.core.exception.OCommandExecutionException: Class 'ASSESSMENTSRESULT' was not found in current database [ONetworkProtocolHttpDb]
+2015-07-06 12:28:17:996 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OQueryParsingException: Error on parsing query
+Query:  AssessmentsResults
+------^
+--> com.orientechnologies.orient.core.exception.OCommandExecutionException: Class 'ASSESSMENTSRESULTS' was not found in current database [ONetworkProtocolHttpDb]
+2015-07-06 12:40:00:742 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'AssessmentResults.Division' is mandatory, but not found on record: AssessmentResults{q1:1.0,q2:1.0,q3:0.5,q4:1.0,q5:0.5,q6:1.0,q7:0.5,q8:0.0,q9:1.0,q10:0.5,q11:0.5,q12:0.0,q13:0.5,q14:1.0,q15:0.5,q16:0.0,q17:0.5,q18:1.0,q19:0.5,q20:0.0,a1:4,a2:3,a3:2,a4:2,a5:2} [ONetworkProtocolHttpDb]
+2015-07-06 12:44:21:955 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OQueryParsingException: Error on parsing query at position #17: Error on parsing query
+Query:  AssessmentResult update AssessmentResults set AppName="test" where @rid=#10:117
+----------------------^
+--> com.orientechnologies.orient.core.exception.OCommandExecutionException: Class 'ASSESSMENTRESULT' was not found in current database [ONetworkProtocolHttpDb]
+2015-07-06 12:44:45:749 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OQueryParsingException: Error on parsing query at position #17: Error on parsing query
+Query:  AssessmentResult update AssessmentResults set AppName="test" where @rid= select max(@rid) from AssessmentResults
+----------------------^
+--> com.orientechnologies.orient.core.exception.OCommandExecutionException: Class 'ASSESSMENTRESULT' was not found in current database [ONetworkProtocolHttpDb]
+2015-07-06 12:45:31:366 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OQueryParsingException: Error on parsing query
+Query:  AssessmentResult
+------^
+--> com.orientechnologies.orient.core.exception.OCommandExecutionException: Class 'ASSESSMENTRESULT' was not found in current database [ONetworkProtocolHttpDb]
+2015-07-06 12:57:20:173 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'AssessmentResults.q11' is mandatory, but not found on record: AssessmentResults{AppName:test} [ONetworkProtocolHttpDb]
+2015-07-06 12:59:04:842 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'AssessmentResults.q11' is mandatory, but not found on record: AssessmentResults{AppName:DevOps} [ONetworkProtocolHttpDb]
+2015-07-06 12:59:09:647 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'AssessmentResults.q11' is mandatory, but not found on record: AssessmentResults{AppName:DevOps} [ONetworkProtocolHttpDb]
+2015-07-06 13:00:10:101 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'AssessmentResults.q11' is mandatory, but not found on record: AssessmentResults{AppName:DevOps} [ONetworkProtocolHttpDb]
+2015-07-06 13:02:31:268 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'AssessmentResults.q11' is mandatory, but not found on record: AssessmentResults{AppName:DevOps} [ONetworkProtocolHttpDb]
+2015-07-06 14:14:39:291 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'AssessmentResults.q11' is mandatory, but not found on record: AssessmentResults{AppName:DevOps} [ONetworkProtocolHttpDb]
+2015-07-06 14:14:52:058 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'AssessmentResults.q11' is mandatory, but not found on record: AssessmentResults{AppName:DevOps} [ONetworkProtocolHttpDb]
+2015-07-06 14:16:32:575 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'AssessmentResults.q11' is mandatory, but not found on record: AssessmentResults{AppName:DevOps,Division:test,LineOfBusiness:test} [ONetworkProtocolHttpDb]
+2015-07-06 14:32:32:391 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OCommandExecutionException: Cannot execute non idempotent command [ONetworkProtocolHttpDb]

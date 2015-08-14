@@ -1,0 +1,32 @@
+
+2015-07-10 13:38:49:459 INFO  OrientDB auto-config DISKCACHE=1,487MB (heap=455MB os=3,991MB disk=20,416MB) [orientechnologies]
+2015-07-10 13:38:49:468 INFO  Loading configuration from: C:/Softwares/orientdb-community-2.0.11/config/orientdb-server-config.xml... [OServerConfigurationLoaderXml]
+2015-07-10 13:38:49:785 INFO  OrientDB Server v2.0.11 (build UNKNOWN@r${buildNumber}; 2015-06-19 15:38:17+0000) is starting up... [OServer]
+2015-07-10 13:38:49:818 INFO  Databases directory: C:\Softwares\orientdb-community-2.0.11\databases [OServer]
+2015-07-10 13:38:49:872 INFO  Listening binary connections on 0.0.0.0:2424 (protocol v.28, socket=default) [OServerNetworkListener]
+2015-07-10 13:38:49:874 INFO  Listening http connections on 0.0.0.0:2480 (protocol v.10, socket=default) [OServerNetworkListener]
+2015-07-10 13:38:49:890 INFO  Installing dynamic plugin 'studio-2.0.zip'... [OServerPluginManager]
+2015-07-10 13:38:49:966 INFO  Installing GREMLIN language v.2.6.0 - graph.pool.max=50 [OGraphServerHandler]
+2015-07-10 13:38:49:977 INFO  [OVariableParser.resolveVariables] Error on resolving property: distributed [orientechnologies]
+2015-07-10 13:38:49:980 INFO  Installing Script interpreter. WARN: authenticated clients can execute any kind of code into the server by using the following allowed languages: [sql] [OServerSideScriptInterpreter]
+2015-07-10 13:38:49:982 INFO  OrientDB Server v2.0.11 is active. [OServer]
+2015-07-10 13:40:41:425 WARNING {db=devopstest} segment file 'database.ocf' was not closed correctly last time [OSingleFileSegment]
+2015-07-10 13:40:41:615 WARNING {db=devopstest} Storage devopstest was not closed properly. Will try to restore from write ahead log. [OLocalPaginatedStorage]
+2015-07-10 13:40:41:615 INFO  {db=devopstest} Looking for last checkpoint... [OLocalPaginatedStorage]
+2015-07-10 13:40:41:650 INFO  {db=devopstest} Found FUZZY checkpoint. [OLocalPaginatedStorage]
+2015-07-10 13:40:41:653 INFO  {db=devopstest} Data restore procedure from FUZZY checkpoint is started. [OLocalPaginatedStorage]
+2015-07-10 13:40:41:659 WARNING {db=devopstest} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=3219844}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-10 13:40:41:660 WARNING {db=devopstest} Record OFuzzyCheckpointStartRecord{lsn=OLogSequenceNumber{segment=0, position=3219855}} com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointStartRecord{lsn=null, previousCheckpoint=OLogSequenceNumber{segment=0, position=3219800}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-10 13:40:41:662 WARNING {db=devopstest} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=3219899}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-10 13:40:41:664 INFO  {db=devopstest} Storage data restore was completed [OLocalPaginatedStorage]
+2015-07-10 14:57:48:081 INFO  Creating database plocal:C:/Softwares/orientdb-community-2.0.11/databases/DevOpsAssessment [OServerCommandPostDatabase]
+2015-07-10 15:00:37:969 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OSchemaException: Property 'UserRole' not found in class ProcessAssessment' [ONetworkProtocolHttpDb]
+2015-07-10 15:22:06:321 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OCommandExecutionException: Property 'ProcessAssessment.q4' already exists. Remove it before to retry. [ONetworkProtocolHttpDb]
+2015-07-10 15:55:36:524 WARNING Session OS14365238498512167442960712541571 is trying to access to the database 'DevOpsAssessment', but has been authenticated against the database 'devopstest' [OServerCommandGetDatabase]
+2015-07-10 15:55:36:549 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'DevOpsUserDetails.ITservice' is mandatory, but not found on record: ProcessAssessment{q1:1.0,q2:0.5,q3:1.0,q4:0.5,q5:1.0,q6:0.5,q7:0.0,q8:0.5,q9:1.0,q10:0.5,q11:1.0,q12:0.5,q13:1.0,q14:0.5,q15:0.0,q16:0.5,q17:1.0,q18:0.5,q19:0.0,q20:0.5,q21:1.0,q22:0.5,q23:1.0,q24:0.5,q25:1.0,q26:1.0,q27:0.5,q28:1.0,q29:0.5,q30:1.0,a1:4,a2:3,a3:3,a4:3,a5:0} [ONetworkProtocolHttpDb]
+2015-07-10 15:56:11:307 WARNING Session OS1436523936526-1287504439321924944 is trying to access to the database 'devopstest', but has been authenticated against the database 'DevOpsAssessment' [OServerCommandPostCommand]
+2015-07-10 16:00:45:942 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OValidationException: The field 'DevOpsUserDetails.ITservice' is mandatory, but not found on record: ProcessAssessment{q1:1.0,q2:0.5,q3:1.0,q4:0.5,q5:1.0,q6:0.5,q7:1.0,q8:0.5,q9:1.0,q10:0.5,q11:1.0,q12:0.5,q13:1.0,q14:0.0,q15:0.5,q16:1.0,q17:0.5,q18:0.0,q19:0.5,q20:1.0,q21:1.0,q22:0.5,q23:1.0,q24:0.5,q25:1.0,q26:0.5,q27:1.0,q28:0.5,q29:1.0,q30:0.5,a1:4,a2:4,a3:3,a4:4,a5:0} [ONetworkProtocolHttpDb]

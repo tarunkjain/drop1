@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <script src="js/orientdb-api.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="metric_results">
+       
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            addTable();
+        });
+
+        function addTable() {
+
+            var dburi = 'http://localhost:2480/DevOpsAssessment';
+            var database = new ODatabase(dburi);
+            databaseInfo = database.open('root', 'admin');
+            var Dbresults = [];
+            queryResult1 = database.query("select * from ProcessAssessment");
+            console.log(queryResult1);
+            Dbresults = queryResult1.result;
+            for (i = 0; i < Dbresults.length; i++) {
+
+                delete Dbresults[i]['@class'];
+                delete Dbresults[i]['@rid'];
+                delete Dbresults[i]['@type'];
+                delete Dbresults[i]['@version'];
+                delete Dbresults[i]['@fieldTypes'];
+
+            }
+            console.log(Dbresults);
+
+
+           
+                var myTableDiv = document.getElementById("metric_results")
+                var table = document.createElement('TABLE')
+                var tableBody = document.createElement('TBODY')
+
+                table.border = '1';
+                table.appendChild(tableBody);
+
+                var heading = new Array();
+            
+                for (key in Dbresults[0]) {
+                    heading.push(key);
+	            }
+                var stock = new Array()
+                
+                for(i = 0; i < Dbresults.length; i++){
+                    var tabRows = new Array();
+                    for (var key  in Dbresults[i]) { 
+                        tabRows.push(Dbresults[i][key]);
+                    }
+                    stock.push(tabRows);      
+                }
+
+                //TABLE COLUMNS
+                var tr = document.createElement('TR');
+                tableBody.appendChild(tr);
+                for (i = 0; i < heading.length; i++) {
+                    var th = document.createElement('TH')
+                    th.width = '75';
+                    th.appendChild(document.createTextNode(heading[i]));
+                    tr.appendChild(th);
+                }
+
+                //TABLE ROWS
+                for (i = 0; i < stock.length; i++) {
+                    var tr = document.createElement('TR');
+                    for (j = 0; j < stock[i].length; j++) {
+                        var td = document.createElement('TD')
+                        td.appendChild(document.createTextNode(stock[i][j]));
+                        tr.appendChild(td)
+                    }
+                    tableBody.appendChild(tr);
+                }
+                myTableDiv.appendChild(table);
+           
+
+        }
+
+    </script>
+</body>
+
+</html>

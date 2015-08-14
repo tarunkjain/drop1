@@ -1,0 +1,59 @@
+
+2015-07-16 15:12:52:810 INFO  OrientDB auto-config DISKCACHE=1,487MB (heap=455MB os=3,991MB disk=18,850MB) [orientechnologies]
+2015-07-16 15:12:52:815 INFO  Loading configuration from: C:/Softwares/orientdb-community-2.0.11/config/orientdb-server-config.xml... [OServerConfigurationLoaderXml]
+2015-07-16 15:12:53:044 INFO  OrientDB Server v2.0.11 (build UNKNOWN@r${buildNumber}; 2015-06-19 15:38:17+0000) is starting up... [OServer]
+2015-07-16 15:12:53:063 INFO  Databases directory: C:\Softwares\orientdb-community-2.0.11\databases [OServer]
+2015-07-16 15:12:53:107 INFO  Listening binary connections on 0.0.0.0:2424 (protocol v.28, socket=default) [OServerNetworkListener]
+2015-07-16 15:12:53:109 INFO  Listening http connections on 0.0.0.0:2480 (protocol v.10, socket=default) [OServerNetworkListener]
+2015-07-16 15:12:53:124 INFO  Installing dynamic plugin 'studio-2.0.zip'... [OServerPluginManager]
+2015-07-16 15:12:53:195 INFO  Installing GREMLIN language v.2.6.0 - graph.pool.max=50 [OGraphServerHandler]
+2015-07-16 15:12:53:197 INFO  [OVariableParser.resolveVariables] Error on resolving property: distributed [orientechnologies]
+2015-07-16 15:12:53:200 INFO  Installing Script interpreter. WARN: authenticated clients can execute any kind of code into the server by using the following allowed languages: [sql] [OServerSideScriptInterpreter]
+2015-07-16 15:12:53:201 INFO  OrientDB Server v2.0.11 is active. [OServer]
+2015-07-16 15:15:04:538 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:04:594 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:07:968 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:08:612 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:17:357 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:17:926 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:19:014 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:20:467 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:20:472 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:20:481 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:15:20:941 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:17:00:064 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:17:00:070 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:17:00:080 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:17:12:140 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:17:12:739 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:17:12:743 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:17:12:751 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:17:13:377 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OConfigurationException: Database 'devopstest' is not configured on server (home=C:/Softwares/orientdb-community-2.0.11/databases/) [ONetworkProtocolHttpDb]
+2015-07-16 15:23:22:493 WARNING {db=DevOpsAssessment} segment file 'database.ocf' was not closed correctly last time [OSingleFileSegment]
+2015-07-16 15:23:22:627 WARNING {db=DevOpsAssessment} Storage DevOpsAssessment was not closed properly. Will try to restore from write ahead log. [OLocalPaginatedStorage]
+2015-07-16 15:23:22:629 INFO  {db=DevOpsAssessment} Looking for last checkpoint... [OLocalPaginatedStorage]
+2015-07-16 15:23:22:676 INFO  {db=DevOpsAssessment} Found FUZZY checkpoint. [OLocalPaginatedStorage]
+2015-07-16 15:23:22:679 INFO  {db=DevOpsAssessment} Data restore procedure from FUZZY checkpoint is started. [OLocalPaginatedStorage]
+2015-07-16 15:23:22:683 WARNING {db=DevOpsAssessment} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=7470487}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-16 15:23:22:685 WARNING {db=DevOpsAssessment} Record OFuzzyCheckpointStartRecord{lsn=OLogSequenceNumber{segment=0, position=7470498}} com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointStartRecord{lsn=null, previousCheckpoint=OLogSequenceNumber{segment=0, position=7470443}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-16 15:23:22:686 WARNING {db=DevOpsAssessment} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=7470542}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-16 15:23:22:687 INFO  {db=DevOpsAssessment} Storage data restore was completed [OLocalPaginatedStorage]

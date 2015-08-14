@@ -1,0 +1,182 @@
+{
+    "AssessmentQuestions": [
+        {
+            "Category": "Project Management",
+            "Question": "What tools do you use for Agile Management & planning?",
+            "Option": [
+                "Jira",
+                "Team foundation server",
+                "Excel Sheets",
+                "SharePoint"
+            ]
+        }, 
+
+        {
+            "Category": "Project Management",
+            "Question": "What tools do you use for Test Management?",
+            "Option": [
+                "Jira",
+                "Team foundation server",
+                "Excel Sheets",
+                "SharePoint"
+            ]
+        }, 
+        {
+            "Category": "Project Management",
+            "Question": "What tools do you use for Defect Management?",
+            "Option": [
+                "Jira",
+                "Team foundation server",
+                "Excel Sheets",
+                "SharePoint"
+            ]
+        }, 
+        {
+            "Category": "Project Management",
+            "Question": "What tools do you use for Requirements Management?",
+            "Option": [
+                "Jira",
+                "ReqPro",
+                "Excel Sheets",
+                "SharePoint"
+            ]
+        }, 
+        {
+            "Category": "Software Development ",
+            "Question": "What tools do you use for Code Review?",
+            "Option": [
+                "FishEye/Crucible",
+                "Stash"
+            ]
+        }, 
+        {
+            "Category": "Software Development",
+            "Question": "What tools do you use for Continuous Integration?",
+            "Option": [
+                "Jenkins",
+                "Team foundation server"
+                ]
+        }, 
+        {
+            "Category": "Software Development",
+            "Question": "What tools do you use for Version Control?",
+            "Option": [
+                "GIT",
+                "SVN",
+                "ENDEVOR"
+            ]
+        }, 
+        {
+            "Category": "Software Development",
+            "Question": "What tools do you use for Architecture & Design?",
+            "Option": [
+                "iServer",
+                "ERStudio",
+                "SPARX EA"
+            ]
+        }, 
+        {
+            "Category": "Release Automation",
+            "Question": "What tools do you use for storing Artefacts(Artefact Repository)?",
+            "Option": [
+                "NEXUSPro",
+                "SharePoint"
+            ]
+        }, 
+        {
+            "Category": "Release Automation",
+            "Question": "What tools do you use for Deployment Automation?",
+            "Option": [
+                "NOLIO",
+                "CHEF",
+                "BLADELOGIC ",
+                "ENDEVOR"
+            ]
+        }, 
+        {
+            "Category": "Environments",
+            "Question": "What tools do you use for Monitoring?",
+            "Option": [
+                "RTView",
+                "SPLUNK",
+                "ELK"
+            ]
+        }, 
+        {
+            "Category": "Environments ",
+            "Question": "What tools do you use for Infrastructure Configurations?",
+            "Option": [
+                "CHEF",
+                "BLADELOGIC"
+            ]
+        }, 
+        {
+            "Category": "Environments",
+            "Question": "What tools do you use for Environment Management?",
+            "Option": [
+                "ITaaS"
+            ]
+        }, 
+        {
+            "Category": "Environments",
+            "Question": "What tools do you use for Container Management?",
+            "Option": [
+                "Docker",
+                "OpenShift"
+            ]
+        },
+        {
+            "Category": "Testing and QA",
+            "Question": "What tools do you use for Code Quality?",
+            "Option": [
+                "SonarQube"
+            ]
+        },  
+        {
+            "Category": "Testing and QA",
+            "Question": "What tools do you use for Security Vulnerability ?",
+            "Option": [
+                "Fortify",
+                "BEST Libraries"
+            ]
+        }, 
+        {
+            "Category": "Testing and QA",
+            "Question": "What tools do you use for Document Generation from Code?",
+            "Option": [
+                "DOXYGEN"
+            ]
+        }, 
+        {
+            "Category": "Testing and QA",
+            "Question": "What tools do you use for Test Automation?",
+            "Option": [
+                "QTP",
+                "Selenium"
+            ]
+        }, 
+        {
+            "Category": "Testing and QA",
+            "Question": "What tools do you use for Performance Testing?",
+            "Option": [
+                "HP Performance Center"
+            ]
+        }, 
+        {
+            "Category": "Testing and QA",
+            "Question": "What tools do you use for Service Virtualisation?",
+            "Option": [
+                "Parasoft"
+            ]
+        }, 
+        {
+            "Category": "Deployments",
+            "Question": "What tools do you use for Collaboration?",
+            "Option": [
+                "Confluence",
+                "SharePoint"
+            ]
+        } 
+
+    ]
+}

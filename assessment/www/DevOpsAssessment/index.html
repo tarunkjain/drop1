@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Virtusa DevOps Assesment</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel='stylesheet prefetch' href='http://daneden.github.io/animate.css/animate.min.css'>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/stylelogin.css">
+</head>
+
+<body>
+
+    <h2 style="margin-top:40px;font-style:italic;font-size:18px;color:#33b5e5;font-weight:400">DevOps for</h2>
+    <img src="./Pictures/Barclays_logo.png" width="38%">
+
+    <div class='form aniamted bounceIn' style="margin-top:10px">
+        <div class='login'>
+            <h2>Begin your assessment</h2>
+            <div class='alert'>
+                Enter your details here.
+            </div>
+            <form>
+                <!--                <input placeholder='Name of the Service your app is part of' type='text' id='serviceType' required>-->
+                <select onchange="populate()" id="serviceType"  required>
+                    <option value="" disabled selected>Please select service</option>
+                </select>
+<!--                <input type="checkbox" name="all" id="all" style="display:initial;width: initial;" /> <label> Check all </label>-->
+                <div class="container" style="text-align:left;">
+<!--                    <input type="checkbox" name="all" id="all" style="display:initial;width: initial;" /> <label> Check all </label>-->
+                   
+                    <!--<input type="checkbox" style="display:initial;width: initial;" /> <label>This is checkbox</label>
+                    <br />
+                    <input type="checkbox" style="display:initial;width: initial;" /> <label>This is checkbox</label>
+                    <br />
+                    <input type="checkbox" style="display:initial;width: initial;" /> <label>This is checkbox</label>
+                    <br />
+                    <input type="checkbox" style="display:initial;width: initial;" /> <label>This is checkbox</label>
+                    <br />
+                    <input type="checkbox" style="display:initial;width: initial;" /> <label>This is checkbox</label>-->
+                </div>
+                <!--                <input placeholder='IT Service your app is part of' type='text' id='appName' required>-->
+                <input placeholder='Your name' type='text' id='yourName' required>
+                <input placeholder='Your role in the team' type='text' id='designation' required>
+                <input type="submit" id='nextBtn' class='formbtn' value="Next" style="width:100%">
+            </form>
+        </div>
+        <div class='register'>
+            <h2>Enter Your Project Details</h2>
+            <div class='alert'>
+                <div class='fa fa-times-circle'></div>
+                Enter your details too.
+            </div>
+            <form>
+                <input placeholder='Username' type='text'>
+                <input placeholder='Password' type='password'>
+                <input placeholder='Confirm Password' type='password'>
+                <input placeholder='Email Address' type='email'>
+                <input placeholder='Birth Date (mm/dd/yy)' type='text'>
+                <div class="formbtn">Login</div>
+            </form>
+        </div>
+    </div>
+<!--    <script src="./js/data.json"></script>-->
+    <script src='./js/jquery.min.js'></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

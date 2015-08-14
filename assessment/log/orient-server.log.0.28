@@ -1,0 +1,37 @@
+
+2015-07-17 11:14:58:984 INFO  OrientDB auto-config DISKCACHE=1,487MB (heap=455MB os=3,991MB disk=18,811MB) [orientechnologies]
+2015-07-17 11:14:58:989 INFO  Loading configuration from: C:/Projects/orientdb-community-2.0.11/config/orientdb-server-config.xml... [OServerConfigurationLoaderXml]
+2015-07-17 11:14:59:233 INFO  OrientDB Server v2.0.11 (build UNKNOWN@r${buildNumber}; 2015-06-19 15:38:17+0000) is starting up... [OServer]
+2015-07-17 11:14:59:254 INFO  Databases directory: C:\Projects\orientdb-community-2.0.11\databases [OServer]
+2015-07-17 11:14:59:308 INFO  Listening binary connections on 0.0.0.0:2424 (protocol v.28, socket=default) [OServerNetworkListener]
+2015-07-17 11:14:59:310 INFO  Listening http connections on 0.0.0.0:2480 (protocol v.10, socket=default) [OServerNetworkListener]
+2015-07-17 11:14:59:325 INFO  Installing dynamic plugin 'studio-2.0.zip'... [OServerPluginManager]
+2015-07-17 11:14:59:398 INFO  Installing GREMLIN language v.2.6.0 - graph.pool.max=50 [OGraphServerHandler]
+2015-07-17 11:14:59:399 INFO  [OVariableParser.resolveVariables] Error on resolving property: distributed [orientechnologies]
+2015-07-17 11:14:59:402 INFO  Installing Script interpreter. WARN: authenticated clients can execute any kind of code into the server by using the following allowed languages: [sql] [OServerSideScriptInterpreter]
+2015-07-17 11:14:59:403 INFO  OrientDB Server v2.0.11 is active. [OServer]
+2015-07-17 11:15:16:526 WARNING {db=DevOpsAssessment} segment file 'database.ocf' was not closed correctly last time [OSingleFileSegment]
+2015-07-17 11:15:16:607 WARNING {db=DevOpsAssessment} Storage DevOpsAssessment was not closed properly. Will try to restore from write ahead log. [OLocalPaginatedStorage]
+2015-07-17 11:15:16:608 INFO  {db=DevOpsAssessment} Looking for last checkpoint... [OLocalPaginatedStorage]
+2015-07-17 11:15:16:640 INFO  {db=DevOpsAssessment} Found FUZZY checkpoint. [OLocalPaginatedStorage]
+2015-07-17 11:15:16:642 INFO  {db=DevOpsAssessment} Data restore procedure from FUZZY checkpoint is started. [OLocalPaginatedStorage]
+2015-07-17 11:15:16:645 WARNING {db=DevOpsAssessment} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=7533622}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-17 11:15:16:647 WARNING {db=DevOpsAssessment} Record OFuzzyCheckpointStartRecord{lsn=OLogSequenceNumber{segment=0, position=7533633}} com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointStartRecord{lsn=null, previousCheckpoint=OLogSequenceNumber{segment=0, position=7533578}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-17 11:15:16:649 WARNING {db=DevOpsAssessment} Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=0, position=7533677}} will be skipped during data restore. [OLocalPaginatedStorage]
+2015-07-17 11:15:16:650 INFO  {db=DevOpsAssessment} Storage data restore was completed [OLocalPaginatedStorage]
+2015-07-17 11:28:54:655 SEVERE Internal server error:
+com.orientechnologies.orient.core.sql.OCommandSQLParsingException: Error on parsing command at position #62: Invalid keyword ITSERVICE. Use UPDATE <class>|cluster:<cluster>> [SET|ADD|PUT|REMOVE|INCREMENT|CONTENT {<JSON>}|MERGE {<JSON>}] [[,] <field-name> = <expression>|<sub-command>]* [LOCK <NONE|RECORD>] [UPSERT] [RETURN <COUNT|BEFORE|AFTER>] [WHERE <conditions>]
+Command: update ProcessAssessment set Date_Time ='17-7-2015  11:28:24' ITservice='BARCLAYS.NET CUSTOMER MIGRATION', ServiceName='BARCLAYS.NET', Username='s', UserRole='s' UPSERT WHERE @rid= #12:55
+----------------------------------------------------------------------^ [ONetworkProtocolHttpDb]
+2015-07-17 11:33:48:560 SEVERE Internal server error:
+java.lang.IllegalArgumentException: Cannot change property type from DATETIME to STRING [ONetworkProtocolHttpDb]
+2015-07-17 11:41:45:587 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OQueryParsingException: Error on conversion of date '17-7-2015  11:41:5' using the format: yyyy-MM-dd HH:mm:ss [ONetworkProtocolHttpDb]
+2015-07-17 11:48:13:461 SEVERE Internal server error:
+com.orientechnologies.orient.core.exception.OQueryParsingException: Error on conversion of date '17-7-2015  11:42:45' using the format: yyyy-MM-dd HH:mm:ss [ONetworkProtocolHttpDb]
+2015-07-17 11:52:11:363 SEVERE Internal server error:
+com.orientechnologies.orient.core.sql.OCommandSQLParsingException: Error on parsing command at position #51: Invalid keyword 11:50:35. Use UPDATE <class>|cluster:<cluster>> [SET|ADD|PUT|REMOVE|INCREMENT|CONTENT {<JSON>}|MERGE {<JSON>}] [[,] <field-name> = <expression>|<sub-command>]* [LOCK <NONE|RECORD>] [UPSERT] [RETURN <COUNT|BEFORE|AFTER>] [WHERE <conditions>]
+Command: update ProcessAssessment set Date_Time =17-7-2015  11:50:35 , ITservice='BARCLAYS.NET CUSTOMER MIGRATION', ServiceName='BARCLAYS.NET', Username='virtusa', UserRole='virtusa' UPSERT WHERE @rid= #12:58
+-----------------------------------------------------------^ [ONetworkProtocolHttpDb]
+2015-07-17 11:57:30:243 SEVERE Internal server error:
+java.lang.IllegalArgumentException: Cannot change property type from DATETIME to STRING [ONetworkProtocolHttpDb]

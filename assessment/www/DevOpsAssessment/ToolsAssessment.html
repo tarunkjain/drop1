@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DevOps Tools Assessment</title>
+    <meta name="author" content="www.virtusa.com" />
+    <meta name="description" content="fullPage fixed header and footer." />
+    <meta name="keywords" content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" type="text/css" href="./css/Styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="./css/layoutdesigns.css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/circle.css">
+
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/modernizr.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jspdf.js"></script>
+    <script type="text/javascript" src="libs/html2pdf.js"></script>
+    <script type="text/javascript" src="libs/require/config.js"></script>
+    <script type="text/javascript" src="plugins/addimage.js"></script>
+    <script type="text/javascript" src="plugins/cell.js"></script>
+    <script type="text/javascript" src="plugins/from_html.js"></script>
+    <script type="text/javascript" src="plugins/split_text_to_size.js"></script>
+    <script type="text/javascript" src="plugins/standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="libs/FileSaver.js/FileSaver.min.js"></script>
+    <script type="text/javascript" src="libs/html2canvas/dist/html2canvas.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/orientdb-api.js" type="text/javascript"></script>
+    <script src="js/orientdb.js" type="text/javascript"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="./js/toolsAssessment.js"></script>
+
+    <style>
+        #SavePDF td {
+            border: 1px solid #eee;
+        }
+        
+        td {
+            width: 16%;
+            padding-left: .5em;
+            padding-right: .5em;
+        }
+        
+        .table-heading {
+            background-color: #8D8C8C;
+        }
+        
+        .table-body {
+            background-color: #ADACAC;
+            padding-bottom: 20px;
+        }
+        
+        table.submitTable {
+            line-height: 50px;
+        }
+        
+        table.submitTable tr {}
+        
+        table.submitTable td {
+            width: 0%;
+            padding-left: 2em;
+            padding-right: .0em;
+        }
+        /* Style for our header texts
+	* --------------------------------------- */
+        
+        h1 {
+            font-size: 5em;
+            font-family: arial, helvetica;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .intro p {
+            color: #fff;
+        }
+        /* Centered texts in each section
+	* --------------------------------------- */
+        
+        .section {
+            text-align: center;
+        }
+        /* Fixed header and footer.
+	* --------------------------------------- */
+        
+        #header,
+        #footer {
+            position: fixed;
+            height: 50px;
+            display: block;
+            width: 100%;
+            background: #333;
+            z-index: 9;
+            text-align: center;
+            color: #f2f2f2;
+            padding: 20px 0 0 0;
+        }
+        
+        #header {
+            top: 0px;
+        }
+        
+        #footer {
+            bottom: 0px;
+            border-top: 2px solid #F79646;
+        }
+        /* Bottom menu
+	* --------------------------------------- */
+        
+        #infoMenu {
+            bottom: 80px;
+        }
+        
+        #infoMenu li a {
+            color: #fff;
+            z-index: 999;
+        }
+        
+        .modalDialog {
+            position: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 99999;
+            opacity: 0;
+            -webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 400ms ease-in;
+            transition: opacity 400ms ease-in;
+            pointer-events: none;
+        }
+        
+        .modalDialog:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .modalDialog > div {
+            width: 400px;
+            position: relative;
+            margin: 10% auto;
+            padding: 5px 20px 13px 20px;
+            border-radius: 10px;
+            background: #fff;
+            background: -moz-linear-gradient(#fff, #999);
+            background: -webkit-linear-gradient(#fff, #999);
+            background: -o-linear-gradient(#fff, #999);
+        }
+        
+        .close {
+            background: #606061;
+            color: #FFFFFF;
+            line-height: 25px;
+            position: absolute;
+            right: -12px;
+            text-align: center;
+            top: -10px;
+            width: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+        }
+        
+        .close:hover {
+            background: #00d9ff;
+        }
+        
+        #submit_button {
+            border-radius: 7px;
+            padding: 5px 35px;
+            border: rgb(10, 7, 4);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <section class="quiz-sub-nav background-site sub-nav-fixed" style="top:0px;">
+
+        <div id='cssmenu'>
+            <ul style="background-color:#F79646">
+                <li id="list2" class='active' style="height: 33px; "><a style="padding-bottom: 9px;"><span>DevOps Tools</span></a>
+                </li>
+                <a href="index.html" style="padding-bottom: 9px;">
+                    <img src="Pictures/home-icon.png" style="width: 36px;height: 98%; float: right;padding-right: 3px;">
+                </a>
+
+            </ul>
+        </div>
+        <ul id="FunctionalMenu2" class="quiz-sub-nav-container">
+            <li onclick="location.href = '#secondPage';" class="quiz-intro-item" style="background-color: #4F81BD; cursor:pointer; width:82%" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Project Management</a>
+                <div id="bar1" class="quiz-progress" style="width: 25%;"><a href="#secondPage"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar2" class="quiz-progress" style="width: 25%;"><a href="#secondPage/1"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar3" class="quiz-progress" style="width: 25%;"><a href="#secondPage/2"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar4" class="quiz-progress" style="width: 25%;"><a href="#secondPage/3"><span class="link-spanner"></span></a>
+                </div>
+            </li>
+            <li onclick="location.href = '#secondPage/4';" class="quiz-intro-item" style="background-color: #4F81BD; cursor:pointer; width:82%" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Development Excellence</a>
+                <div id="bar5" class="quiz-progress" style="width: 25%;"><a href="#secondPage/4"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar6" class="quiz-progress" style="width: 25%;"><a href="#secondPage/5"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar7" class="quiz-progress" style="width: 25%;"><a href="#secondPage/6"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar8" class="quiz-progress" style="width: 25%;"><a href="#secondPage/7"><span class="link-spanner"></span></a>
+                </div>
+            </li>
+            <li onclick="location.href = '#secondPage/8';" class="quiz-intro-item" style="background-color: #4F81BD; cursor:pointer; width:82%" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Release Automation</a>
+                <div id="bar9" class="quiz-progress" style="width: 50%;"><a href="#secondPage/8"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar10" class="quiz-progress" style="width: 50%;"><a href="#secondPage/9"><span class="link-spanner"></span></a>
+                </div>
+
+            </li>
+            <li onclick="location.href = '#secondPage/10';" class="quiz-intro-item" style="background-color: #4F81BD; cursor:pointer; width:82%" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Environments</a>
+                <div id="bar11" class="quiz-progress" style="width: 25%;"><a href="#secondPage/10"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar12" class="quiz-progress" style="width: 25%;"><a href="#secondPage/11"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar13" class="quiz-progress" style="width: 25%;"><a href="#secondPage/12"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar14" class="quiz-progress" style="width: 25%;"><a href="#secondPage/13"><span class="link-spanner"></span></a>
+                </div>
+            </li>
+            <li onclick="location.href = '#secondPage/14';" class="quiz-intro-item" style="background-color: #4F81BD; cursor:pointer; width:82%" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Testing & QA</a>
+                <div id="bar15" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/14"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar16" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/15"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar17" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/16"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar18" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/17"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar19" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/18"><span class="link-spanner"></span></a>
+                </div>
+                <div id="bar20" class="quiz-progress" style="width: 16.6666666667%;"><a href="#secondPage/19"><span class="link-spanner"></span></a>
+                </div>
+            </li>
+            <li onclick="location.href = '#secondPage/20';" class="quiz-intro-item" style="background-color: #4F81BD; cursor:pointer; width:82%" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Deployments</a>
+                <div id="bar21" class="quiz-progress" style="width: 100%;"><a href="#secondPage/20"><span class="link-spanner"></span></a>
+                </div>
+
+            </li>
+            <li onclick="location.href = '#secondPage/21';" class="quiz-intro-item" style="background-color: #4F81BD; cursor:pointer; width:82%" data-id="5452ddea3161370002e20000">
+                <a class="quiz-intro-link " style="padding-top: 3px;color: white;">Tooling Compliance Results</a>
+                <div id="bar22" class="quiz-progress" style="width: 100%;"><a href="#secondPage/21"><span class="link-spanner"></span></a>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <div id="footer" style="background-color:#4F81BD;padding: 8px 0 0 0;">
+        <table>
+            <tr>
+                <td style="width:100%">
+                    Copyright © 2015 Virtusa Corporation. All Rights Reserved.
+                </td>
+                <td style="width:100px" align="right">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="fullpage">
+
+        <div class="section" id="section1" style="display:none">
+
+
+            <div class="slide" id="slide1">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question1"></div>
+                    <div id="container1" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/1" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide2">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question2"></div>
+                    <div id="container2" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/2" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide3">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question3"></div>
+                    <div id="container3" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/3" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide4">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question4"></div>
+                    <div id="container4" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/4" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide5">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question5"></div>
+                    <div id="container5" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/5" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide6">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question6"></div>
+                    <div id="container6" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/6" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+            <div class="slide" id="slide7">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question7"></div>
+                    <div id="container7" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/7" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide8">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question8"></div>
+                    <div id="container8" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/8" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide9">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question9"></div>
+                    <div id="container9" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/9" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide10">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question10"></div>
+                    <div id="container10" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/10" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+            <div class="slide" id="slide11">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question11"></div>
+                    <div id="container11" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/11" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide12">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question12"></div>
+                    <div id="container12" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/12" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide13">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question13"></div>
+                    <div id="container13" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/13" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide14">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question14"></div>
+                    <div id="container14" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/14" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide15">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question15"></div>
+                    <div id="container15" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/15" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide16">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question16"></div>
+                    <div id="container16" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/16" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide17">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question17"></div>
+                    <div id="container17" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/17" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide18">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question18"></div>
+                    <div id="container18" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/18" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide19">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question19"></div>
+                    <div id="container19" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/19" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide20">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question20"></div>
+                    <div id="container20" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/20" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide21">
+                <div class="intro">
+                    <img src=".\Pictures\Tools\Tools_128.png" height="150" width="135" style="padding-bottom: 20px;">
+                    <div id="question21"></div>
+                    <div id="container21" class="containerToolsMain">
+                        <div class="containerTools" style="text-align:left;">
+                        </div>
+
+                    </div>
+                    <div id="queans1" style="display:none">
+                        <h3 id="ans1"></h3>
+                    </div>
+                    <div> <a class="next" href="#secondPage/21" style="font-size: medium;"> Next</a></div>
+
+                    <img src="./Pictures/Barclays_logo.png" width="200" style="margin-top:30px">
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="slide" id="slide22">
+                <div id="SavePDF">
+                    <table width="100%" height="175" width="160" style="padding-bottom: 20px;">
+                        <tr>
+                            <td style="width: 10%">&nbsp;</td>
+                            <td height="15%">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td style="width: 10%">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10% ;height: 40px;">&nbsp;</td>
+                            <td class="table-heading"><a class="quiz-intro-link " style="font-size:16px;color: white; font-family: Open Sans">Tools Assessment</a>
+                            </td>
+
+                            <td style="width: 10%">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 40%">&nbsp;</td>
+                            <td class="table-body" valign="top" height="30%" style="width: 20%">
+
+                                <!--<div class="progress-bar-wrapper">
+                                        <progress id="progressbar5" value="0" max="100"></progress>
+
+                                    </div>-->
+
+                                <div class="circlediv">
+                                    <!--<div class="c100 p25 small">
+                                        <span>25%</span>
+                                        <div class="slice">
+                                            <div class="bar"></div>
+                                            <div class="fill"></div>
+                                        </div>
+                                    </div>-->
+                                </div>
+
+
+                               
+                                <br/>
+                                <span id="text50" style="font: 200 17px / 24px source-sans-pro,Sans-serif;">Pending Results</span>
+                                <br/>
+                                <br/>
+                                <span id="text51" style="font: 200 16px / 24px source-sans-pro,Sans-serif;">Please answer all the questions and come back
+        </span>
+                            </td>
+
+                            <td style="width: 40%; padding-right: 35%;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 44%">&nbsp;</td>
+                            <td style="padding-top: 18px;" colspan='1' align="center">
+
+                                <!--                                <div id="printID" class="btn" style="width:250px;">Save</div>-->
+                                <input type="submit" id='printID' class='btn' value="Save" style="width:50%">
+
+                                <br>
+                            </td>
+                            <td style="width: 44%">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td style="width: 10%">&nbsp;</td>
+                            <td height="20%">&nbsp;</td>
+                            <td></td>
+                            <td>
+                                <div id="SetText" style="font-size: large; font-family: monospace; color: black;"></div>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td style="width: 10%">&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div id="openModal" class="modalDialog">
+        <div>
+            <form>
+
+                <a href="#close" title="Close" class="close">X</a>
+                <table class="submitTable">
+                    <tr>
+
+                        <h2 style="font-size:200%">Please Enter Your App Details</h2>
+                        <hr>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 style="font-size:150%">App Name:</h4>
+                        </td>
+                        <td>
+                            <ul class="input-list style-1 clearfix">
+                                <li>
+                                    <input id="AppName" type="text" placeholder=" " required>
+                                </li>
+                            </ul>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 style="font-size:150%">Line of Business:</h4>
+                        </td>
+                        <td>
+                            <ul class="input-list style-1 clearfix">
+                                <li>
+                                    <input id="LineOfBusiness" type="text" placeholder=" " required>
+                                </li>
+                            </ul>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 style="font-size:150%">Division:</h4>
+                        </td>
+                        <td>
+                            <ul class="input-list style-1 clearfix">
+                                <li>
+                                    <input id="Division" type="text" placeholder=" " required>
+                                </li>
+                            </ul>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="submit_button" name="Submit">Submit</button>
+                        </td>
+
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //my code to redirect
+            var newURL = window.location.protocol + "//" + window.location.host;
+            window.location.assign(newURL + "/DevOpsAssessment/ToolsAssessment.html#secondPage");
+
+            //end of my code
+
+            $('#fullpage').fullpage({
+                anchors: ['secondPage'],
+                sectionsColor: ['rgb(240, 242, 244)'],
+                css3: true
+            });
+
+            //
+
+            $.getJSON('./js/ToolsAssessmentQuestions.json', function(data) {
+                $.each(data.AssessmentQuestions, function(questionIndex, val) {
+                    $('#question' + (questionIndex + 1)).html('<h3>' + val.Question + '</h3>');
+                    $.each(val.Option, function(optionIndex, value) {
+                        containerIndex = questionIndex + 1;
+                        $('#container' + containerIndex).children('.containerTools').append('<label> <input type="checkbox" name=ques' + containerIndex + ' style="margin-bottom: 20px;" />' + " " + value + '</label><br />');
+                    });
+                });
+                $('.containerTools').append(' <textarea placeholder="Others"></textarea>');
+                $("textarea").val('');
+            });
+
+
+        });
+
+        $(':radio').change(function() {
+            $('.choice').text(this.value + ' stars');
+        })
+
+    </script>
+
+</body>
+
+</html>
